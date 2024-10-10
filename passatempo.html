@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passatempo - HappyParty</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <style>
+    
+    .game-container {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f4f4f4;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .game-container h2 {
+      color: #F34615;
+      margin-bottom: 20px;
+    }
+
+    .game-container input {
+      padding: 10px;
+      font-size: 16px;
+      width: 60%;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .game-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #F34615;
+      color: white;
+      cursor: pointer;
+    }
+
+    .game-container button:hover {
+      background-color: #e03e0c;
+    }
+
+    .game-container p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo-link">
+      <img src="imagens/logo-happyparty.png" alt="Logo HappyParty" class="logo">
+    </a>
+    <nav>
+      <ul class="nav-links">
+        
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="contato.html">Contactos</a></li>
+        <li><a href="localizacao.html">Localização</a></li>
+        <li><a href="horarios.html">Horários</a></li>
+        <li><a href="passatempo.html">Passatempo</a></li> 
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+    <section class="game-container">
+      
+
+
+      <h2>Adivinha o Número!</h2>
+      <p>Vitor está a pensar num número entre 1 e 100. Tenta adivinhar!</p>
+      <input type="number" id="guess" placeholder="Digite seu palpite" min="1" max="100">
+      <button onclick="checkGuess()">Enviar Palpite</button>
+      <p id="result"></p>
+      
+      
+    </section>
+
+    <img src="imagens/bonecosparty.png" alt="toy" class="toy">
+    <img src="imagens/assi.png" alt="assi" class="assi">
+    <img src="imagens/cara.png" alt="cara" class="cara">
+  </main>
+  <footer>
+    <p>&copy; 2024 HappyParty. Todos os direitos reservados.</p>
+  </footer>
+  <script>
+    
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      const guess = parseInt(document.getElementById('guess').value);
+      const result = document.getElementById('result');
+      attempts++;
+
+      if (isNaN(guess) || guess < 1 || guess > 100) {
+        result.textContent = 'Por favor, insira um número entre 1 e 100.';
+        result.style.color = 'red';
+        return;
+      }
+
+      if (guess === randomNumber) {
+        result.textContent = `Parabéns! Acertaste o número em ${attempts} tentativas.`;
+        result.style.color = 'green';
+        resetGame();
+      } else if (guess < randomNumber) {
+        result.textContent = 'Tenta um número maior.';
+        result.style.color = 'blue';
+      } else {
+        result.textContent = 'Tenta um número menor.';
+        result.style.color = 'blue';
+      }
+    }
+
+    function resetGame() {
+      randomNumber = Math.floor(Math.random() * 100) + 1;
+      attempts = 0;
+    }
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+ 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactos - HappyParty</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo-link">
+      
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="contato.html">Contactos</a></li>
+        <li><a href="localizacao.html">Localização</a></li>
+        <li><a href="horarios.html">Horários</a></li>
+        <li><a href="passatempo.html">Passatempo</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="contato">
+      <img src="imagens/contatosbakul.png" alt="contatosbakul" class="contatosbakul">
+      <p>Entra em contacto connosco através dos seguintes meios:</p>
+      <ul>
+        <li>Email: geral@happyparty.pt</li>
+        <li>Telefone: +351 210 885 345</li>
+        <li>Endereço: Rua de Moçambique, 20 6ºesq., 1367-420 Lisboa</li>
+      </ul>
+      <h2>Formulário de Contacto</h2>
+      <form action="mailto:geral@happyparty.pt" method="post" enctype="text/plain">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 HappyParty. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
